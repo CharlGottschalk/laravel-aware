@@ -36,7 +36,7 @@ You're ready to go and tracking will happen automatically.
 
 ## Documentation
 
-For more in-depth information and setup, please read the [documentation]().
+For more in-depth information and setup, please read the [documentation](https://laravel-aware.vercel.app/).
 
 ## Credits
 
