@@ -2,8 +2,8 @@
 
 namespace CharlGottschalk\LaravelAware\Entities;
 
-use Illuminate\Database\Eloquent\Model;
 use CharlGottschalk\LaravelAware\Enums\ChangeAction;
+use Illuminate\Database\Eloquent\Model;
 
 class ChangeData
 {

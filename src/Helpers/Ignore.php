@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace CharlGottschalk\LaravelAware\Helpers;
 
-use Illuminate\Database\Eloquent\Model;
 use CharlGottschalk\LaravelAware\Enums\ChangeAction;
 use CharlGottschalk\LaravelAware\Models\Change;
+use Illuminate\Database\Eloquent\Model;
 
 class Ignore
 {

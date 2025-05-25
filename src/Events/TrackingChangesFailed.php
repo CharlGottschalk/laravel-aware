@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace CharlGottschalk\LaravelAware\Events;
 
+use CharlGottschalk\LaravelAware\Entities\ChangedAttributes;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
-use CharlGottschalk\LaravelAware\Entities\ChangedAttributes;
 use Throwable;
 
 class TrackingChangesFailed

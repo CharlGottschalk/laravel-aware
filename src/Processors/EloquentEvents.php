@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace CharlGottschalk\LaravelAware\Processors;
 
-use Illuminate\Support\Facades\Event;
 use CharlGottschalk\LaravelAware\Entities\ChangeData;
 use CharlGottschalk\LaravelAware\Enums\ChangeAction;
 use CharlGottschalk\LaravelAware\Jobs\ProcessGlobalChanges;
 use CharlGottschalk\LaravelAware\Tracker;
+use Illuminate\Support\Facades\Event;
 
 /**
  * @property ChangeData[] $trackers

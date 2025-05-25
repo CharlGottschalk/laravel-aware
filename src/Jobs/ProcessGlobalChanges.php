@@ -2,15 +2,14 @@
 
 namespace CharlGottschalk\LaravelAware\Jobs;
 
-use Exception;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Foundation\Queue\Queueable;
 use CharlGottschalk\LaravelAware\Entities\ChangeData;
 use CharlGottschalk\LaravelAware\Helpers\Actor;
 use CharlGottschalk\LaravelAware\Helpers\Ignore;
 use CharlGottschalk\LaravelAware\Helpers\Queue;
-use CharlGottschalk\LaravelAware\Helpers\Tracking;
 use CharlGottschalk\LaravelAware\Processors\Changes;
+use Exception;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Foundation\Queue\Queueable;
 
 class ProcessGlobalChanges implements ShouldQueue
 {

@@ -4,10 +4,8 @@ declare(strict_types=1);
 
 namespace CharlGottschalk\LaravelAware\Traits;
 
-use Illuminate\Database\Eloquent\Relations\MorphMany;
-use CharlGottschalk\LaravelAware\Entities\ChangeActor;
-use CharlGottschalk\LaravelAware\Helpers\Actor;
 use CharlGottschalk\LaravelAware\Models\Change;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 /**
  * @method MorphMany morphMany(string $model, string $column)

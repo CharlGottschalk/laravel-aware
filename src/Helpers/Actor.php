@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace CharlGottschalk\LaravelAware\Helpers;
 
+use CharlGottschalk\LaravelAware\Entities\ChangeActor;
 use Exception;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
-use CharlGottschalk\LaravelAware\Entities\ChangeActor;
 
 class Actor
 {

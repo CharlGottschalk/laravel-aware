@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace CharlGottschalk\LaravelAware;
 
+use CharlGottschalk\LaravelAware\Enums\ChangeAction;
+use CharlGottschalk\LaravelAware\Models\Change;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
-use CharlGottschalk\LaravelAware\Enums\ChangeAction;
-use CharlGottschalk\LaravelAware\Models\Change;
 
 class Who
 {

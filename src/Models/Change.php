@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace CharlGottschalk\LaravelAware\Models;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\MorphTo;
-use Illuminate\Support\Carbon;
 use CharlGottschalk\LaravelAware\Entities\ChangedAttributes;
 use CharlGottschalk\LaravelAware\Enums\ChangeAction;
 use CharlGottschalk\LaravelAware\Enums\ChangedUsing;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Illuminate\Support\Carbon;
 
 /**
  * Class representing an entity.
