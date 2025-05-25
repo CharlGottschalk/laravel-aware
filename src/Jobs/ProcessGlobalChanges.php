@@ -1,15 +1,16 @@
 <?php
 
-namespace OneOne8\LaravelAware\Jobs;
+namespace CharlGottschalk\LaravelAware\Jobs;
 
 use Exception;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
-use OneOne8\LaravelAware\Entities\ChangeData;
-use OneOne8\LaravelAware\Helpers\Actor;
-use OneOne8\LaravelAware\Helpers\Ignore;
-use OneOne8\LaravelAware\Helpers\Queue;
-use OneOne8\LaravelAware\Processors\Changes;
+use CharlGottschalk\LaravelAware\Entities\ChangeData;
+use CharlGottschalk\LaravelAware\Helpers\Actor;
+use CharlGottschalk\LaravelAware\Helpers\Ignore;
+use CharlGottschalk\LaravelAware\Helpers\Queue;
+use CharlGottschalk\LaravelAware\Helpers\Tracking;
+use CharlGottschalk\LaravelAware\Processors\Changes;
 
 class ProcessGlobalChanges implements ShouldQueue
 {

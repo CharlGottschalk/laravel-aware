@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-namespace OneOne8\LaravelAware\Processors;
+namespace CharlGottschalk\LaravelAware\Processors;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
-use OneOne8\LaravelAware\Entities\ChangeActor;
-use OneOne8\LaravelAware\Entities\ChangedAttributes;
-use OneOne8\LaravelAware\Enums\ChangeAction;
-use OneOne8\LaravelAware\Enums\ChangedUsing;
-use OneOne8\LaravelAware\Events\TrackingChangesCompleted;
-use OneOne8\LaravelAware\Events\TrackingChangesFailed;
-use OneOne8\LaravelAware\Events\TrackingChangesStarted;
-use OneOne8\LaravelAware\Models\Change;
+use CharlGottschalk\LaravelAware\Entities\ChangeActor;
+use CharlGottschalk\LaravelAware\Entities\ChangedAttributes;
+use CharlGottschalk\LaravelAware\Enums\ChangeAction;
+use CharlGottschalk\LaravelAware\Enums\ChangedUsing;
+use CharlGottschalk\LaravelAware\Events\TrackingChangesCompleted;
+use CharlGottschalk\LaravelAware\Events\TrackingChangesFailed;
+use CharlGottschalk\LaravelAware\Events\TrackingChangesStarted;
+use CharlGottschalk\LaravelAware\Models\Change;
 use Throwable;
 
 class Changes

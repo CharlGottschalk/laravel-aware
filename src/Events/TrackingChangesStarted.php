@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace OneOne8\LaravelAware\Events;
+namespace CharlGottschalk\LaravelAware\Events;
 
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Database\Eloquent\Model;

@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace OneOne8\LaravelAware\Models;
+namespace CharlGottschalk\LaravelAware\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Support\Carbon;
-use OneOne8\LaravelAware\Entities\ChangedAttributes;
-use OneOne8\LaravelAware\Enums\ChangeAction;
-use OneOne8\LaravelAware\Enums\ChangedUsing;
+use CharlGottschalk\LaravelAware\Entities\ChangedAttributes;
+use CharlGottschalk\LaravelAware\Enums\ChangeAction;
+use CharlGottschalk\LaravelAware\Enums\ChangedUsing;
 
 /**
  * Class representing an entity.

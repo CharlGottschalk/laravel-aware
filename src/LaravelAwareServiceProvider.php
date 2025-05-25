@@ -1,9 +1,9 @@
 <?php
 
-namespace OneOne8\LaravelAware;
+namespace CharlGottschalk\LaravelAware;
 
-use OneOne8\LaravelAware\Helpers\Tracking;
-use OneOne8\LaravelAware\Processors\EloquentEvents;
+use CharlGottschalk\LaravelAware\Helpers\Tracking;
+use CharlGottschalk\LaravelAware\Processors\EloquentEvents;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
@@ -28,7 +28,7 @@ class LaravelAwareServiceProvider extends PackageServiceProvider
                     })
                     ->publishConfigFile()
                     ->publishMigrations()
-                    ->askToStarRepoOnGitHub('1one8/laravel-aware');
+                    ->askToStarRepoOnGitHub('CharlGottschalk/laravel-aware');
             });
     }
 

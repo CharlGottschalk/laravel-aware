@@ -2,10 +2,12 @@
 
 declare(strict_types=1);
 
-namespace OneOne8\LaravelAware\Traits;
+namespace CharlGottschalk\LaravelAware\Traits;
 
 use Illuminate\Database\Eloquent\Relations\MorphMany;
-use OneOne8\LaravelAware\Models\Change;
+use CharlGottschalk\LaravelAware\Entities\ChangeActor;
+use CharlGottschalk\LaravelAware\Helpers\Actor;
+use CharlGottschalk\LaravelAware\Models\Change;
 
 /**
  * @method MorphMany morphMany(string $model, string $column)

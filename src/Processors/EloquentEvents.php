@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace OneOne8\LaravelAware\Processors;
+namespace CharlGottschalk\LaravelAware\Processors;
 
 use Illuminate\Support\Facades\Event;
-use OneOne8\LaravelAware\Entities\ChangeData;
-use OneOne8\LaravelAware\Enums\ChangeAction;
-use OneOne8\LaravelAware\Jobs\ProcessGlobalChanges;
-use OneOne8\LaravelAware\Tracker;
+use CharlGottschalk\LaravelAware\Entities\ChangeData;
+use CharlGottschalk\LaravelAware\Enums\ChangeAction;
+use CharlGottschalk\LaravelAware\Jobs\ProcessGlobalChanges;
+use CharlGottschalk\LaravelAware\Tracker;
 
 /**
  * @property ChangeData[] $trackers

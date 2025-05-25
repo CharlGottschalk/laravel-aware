@@ -61,12 +61,12 @@ return new class extends Migration
 
                     $table->enum(
                         'action',
-                        \OneOne8\LaravelAware\Enums\ChangeAction::values()
+                        \CharlGottschalk\LaravelAware\Enums\ChangeAction::values()
                     )
                         ->default('create');
                     $table->enum(
                         'changed_using',
-                        \OneOne8\LaravelAware\Enums\ChangedUsing::values()
+                        \CharlGottschalk\LaravelAware\Enums\ChangedUsing::values()
                     )
                         ->nullable()
                         ->default(null);

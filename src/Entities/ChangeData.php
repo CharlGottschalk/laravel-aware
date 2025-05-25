@@ -1,9 +1,9 @@
 <?php
 
-namespace OneOne8\LaravelAware\Entities;
+namespace CharlGottschalk\LaravelAware\Entities;
 
 use Illuminate\Database\Eloquent\Model;
-use OneOne8\LaravelAware\Enums\ChangeAction;
+use CharlGottschalk\LaravelAware\Enums\ChangeAction;
 
 class ChangeData
 {

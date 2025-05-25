@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace OneOne8\LaravelAware\Helpers;
+namespace CharlGottschalk\LaravelAware\Helpers;
 
 use Exception;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
-use OneOne8\LaravelAware\Entities\ChangeActor;
+use CharlGottschalk\LaravelAware\Entities\ChangeActor;
 
 class Actor
 {

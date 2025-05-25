@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace OneOne8\LaravelAware\Helpers;
+namespace CharlGottschalk\LaravelAware\Helpers;
 
 use Illuminate\Support\Facades\Auth;
 

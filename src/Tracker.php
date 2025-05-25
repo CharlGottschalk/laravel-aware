@@ -1,11 +1,11 @@
 <?php
 
-namespace OneOne8\LaravelAware;
+namespace CharlGottschalk\LaravelAware;
 
 use Illuminate\Database\Eloquent\Model;
-use OneOne8\LaravelAware\Entities\ChangeData;
-use OneOne8\LaravelAware\Enums\ChangeAction;
-use OneOne8\LaravelAware\Processors\Changes;
+use CharlGottschalk\LaravelAware\Entities\ChangeData;
+use CharlGottschalk\LaravelAware\Enums\ChangeAction;
+use CharlGottschalk\LaravelAware\Processors\Changes;
 
 class Tracker
 {

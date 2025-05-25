@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace OneOne8\LaravelAware\Traits;
+namespace CharlGottschalk\LaravelAware\Traits;
 
 use Illuminate\Database\Eloquent\Model;
-use OneOne8\LaravelAware\Entities\ChangeData;
-use OneOne8\LaravelAware\Enums\ChangeAction;
-use OneOne8\LaravelAware\Helpers\Tracking;
-use OneOne8\LaravelAware\Jobs\ProcessChanges;
-use OneOne8\LaravelAware\Tracker;
+use CharlGottschalk\LaravelAware\Entities\ChangeData;
+use CharlGottschalk\LaravelAware\Enums\ChangeAction;
+use CharlGottschalk\LaravelAware\Helpers\Tracking;
+use CharlGottschalk\LaravelAware\Jobs\ProcessChanges;
+use CharlGottschalk\LaravelAware\Tracker;
 
 trait ObserverTracksChanges
 {

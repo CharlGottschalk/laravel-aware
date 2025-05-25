@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace OneOne8\LaravelAware\Helpers;
+namespace CharlGottschalk\LaravelAware\Helpers;
 
 use Illuminate\Database\Eloquent\Model;
-use OneOne8\LaravelAware\Enums\ChangeAction;
-use OneOne8\LaravelAware\Models\Change;
+use CharlGottschalk\LaravelAware\Enums\ChangeAction;
+use CharlGottschalk\LaravelAware\Models\Change;
 
 class Ignore
 {

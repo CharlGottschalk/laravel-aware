@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace OneOne8\LaravelAware\Enums;
+namespace CharlGottschalk\LaravelAware\Enums;
 
 enum ChangeAction: string
 {

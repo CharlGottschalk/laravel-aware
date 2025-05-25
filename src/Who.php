@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace OneOne8\LaravelAware;
+namespace CharlGottschalk\LaravelAware;
 
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
-use OneOne8\LaravelAware\Enums\ChangeAction;
-use OneOne8\LaravelAware\Models\Change;
+use CharlGottschalk\LaravelAware\Enums\ChangeAction;
+use CharlGottschalk\LaravelAware\Models\Change;
 
 class Who
 {

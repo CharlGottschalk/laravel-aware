@@ -1,6 +1,6 @@
 <?php
 
-namespace OneOne8\LaravelAware\Tests;
+namespace CharlGottschalk\LaravelAware\Tests;
 
 use Illuminate\Support\Facades\File;
 use Orchestra\Testbench\TestCase as Orchestra;
