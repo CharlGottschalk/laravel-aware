@@ -2,10 +2,10 @@
 
 namespace CharlGottschalk\LaravelAware;
 
-use Illuminate\Database\Eloquent\Model;
 use CharlGottschalk\LaravelAware\Entities\ChangeData;
 use CharlGottschalk\LaravelAware\Enums\ChangeAction;
 use CharlGottschalk\LaravelAware\Processors\Changes;
+use Illuminate\Database\Eloquent\Model;
 
 class Tracker
 {

@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace CharlGottschalk\LaravelAware\Traits;
 
-use Illuminate\Database\Eloquent\Model;
 use CharlGottschalk\LaravelAware\Entities\ChangeData;
 use CharlGottschalk\LaravelAware\Enums\ChangeAction;
 use CharlGottschalk\LaravelAware\Helpers\Tracking;
 use CharlGottschalk\LaravelAware\Jobs\ProcessChanges;
 use CharlGottschalk\LaravelAware\Tracker;
+use Illuminate\Database\Eloquent\Model;
 
 trait ObserverTracksChanges
 {

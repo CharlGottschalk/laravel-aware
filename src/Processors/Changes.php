@@ -5,10 +5,6 @@ declare(strict_types=1);
 namespace CharlGottschalk\LaravelAware\Processors;
 
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Route;
 use CharlGottschalk\LaravelAware\Entities\ChangeActor;
 use CharlGottschalk\LaravelAware\Entities\ChangedAttributes;
 use CharlGottschalk\LaravelAware\Enums\ChangeAction;
@@ -17,6 +13,10 @@ use CharlGottschalk\LaravelAware\Events\TrackingChangesCompleted;
 use CharlGottschalk\LaravelAware\Events\TrackingChangesFailed;
 use CharlGottschalk\LaravelAware\Events\TrackingChangesStarted;
 use CharlGottschalk\LaravelAware\Models\Change;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Route;
 use Throwable;
 
 class Changes
