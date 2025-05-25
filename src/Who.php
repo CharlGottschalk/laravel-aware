@@ -16,8 +16,7 @@ class Who
         string $referenceType,
         string|int $referenceId,
         ChangeAction $action = ChangeAction::CREATE,
-    ): Model|Collection|null
-    {
+    ): Model|Collection|null {
         return self::getActorResult(
             referenceType: $referenceType,
             referenceId: $referenceId,
@@ -28,8 +27,7 @@ class Who
     public static function created(
         string $referenceType,
         string|int $referenceId
-    ): Model|Collection|null
-    {
+    ): Model|Collection|null {
         return self::performed(
             referenceType: $referenceType,
             referenceId: $referenceId
@@ -39,8 +37,7 @@ class Who
     public static function deleted(
         string $referenceType,
         string|int $referenceId
-    ): Model|Collection|null
-    {
+    ): Model|Collection|null {
         return self::performed(
             referenceType: $referenceType,
             referenceId: $referenceId,
@@ -51,8 +48,7 @@ class Who
     public static function forceDeleted(
         string $referenceType,
         string|int $referenceId
-    ): Model|Collection|null
-    {
+    ): Model|Collection|null {
         return self::performed(
             referenceType: $referenceType,
             referenceId: $referenceId,
@@ -63,8 +59,7 @@ class Who
     public static function restored(
         string $referenceType,
         string|int $referenceId
-    ): Model|Collection|null
-    {
+    ): Model|Collection|null {
         return self::performed(
             referenceType: $referenceType,
             referenceId: $referenceId,
@@ -75,8 +70,7 @@ class Who
     public static function updated(
         string $referenceType,
         string|int $referenceId
-    ): Model|Collection|null
-    {
+    ): Model|Collection|null {
         return self::performed(
             referenceType: $referenceType,
             referenceId: $referenceId,
@@ -89,8 +83,7 @@ class Who
         string|int $referenceId,
         ChangeAction $action,
 
-    ): null|Collection|Model
-    {
+    ): null|Collection|Model {
         $changes = self::getQuery(
             $referenceType,
             $referenceId,
@@ -112,8 +105,7 @@ class Who
         string $referenceType,
         string|int $referenceId,
         ChangeAction $action
-    ): EloquentCollection
-    {
+    ): EloquentCollection {
         $changes = Change::where(
             'reference_type',
             $referenceType
