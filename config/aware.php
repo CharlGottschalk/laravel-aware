@@ -9,7 +9,7 @@ return [
     /**
      * Automatically track changes for all models.
      */
-    'global' => env('AWARE_GLOBAL', true),
+    'auto' => env('AWARE_AUTO', true),
 
     /**
      * Track only during authenticated sessions.

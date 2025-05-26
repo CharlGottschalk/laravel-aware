@@ -19,11 +19,11 @@ class Tracking
 
     public static function shouldTrackGlobal(): bool
     {
-        return static::shouldTrack() && config('aware.global');
+        return static::shouldTrack() && config('aware.auto');
     }
 
     public static function shouldTrackManually(): bool
     {
-        return static::shouldTrack() && ! config('aware.global');
+        return static::shouldTrack() && ! config('aware.auto');
     }
 }

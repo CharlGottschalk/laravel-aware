@@ -16,6 +16,13 @@ class Ignore
             return true;
         }
 
+        if (in_array(
+            get_class($model),
+            config('aware.ignore')
+        )) {
+            return true;
+        }
+
         $ignore = false;
 
         if (method_exists(
@@ -25,18 +32,15 @@ class Ignore
             $ignore = $model->ignoreTracking();
         }
 
+        if ($ignore) {
+            return true;
+        }
+
         if (method_exists(
             $model,
             'ignoreTrackingEvents'
         )) {
             $ignore = in_array($action->value, $model->ignoreTrackingEvents());
-        }
-
-        if (in_array(
-            get_class($model),
-            config('aware.ignore')
-        )) {
-            $ignore = true;
         }
 
         return $ignore;
