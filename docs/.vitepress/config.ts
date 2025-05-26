@@ -3,6 +3,7 @@ export default ({
     title: "Aware for Laravel",
     description: "A simple tool to track changes to Eloquent models",
     cleanUrls: true,
+    base: '/laravel-aware/',
     appearance: 'dark',
     themeConfig: {
         logo: {
