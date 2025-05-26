@@ -1,7 +1,6 @@
 {
     "name": "charlgottschalk/laravel-aware",
     "description": "A simple auditing package to keep track of your Eloquent model changes",
-    "version": "1.0.0",
     "keywords": [
         "CharlGottschalk",
         "laravel",
