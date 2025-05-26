@@ -25,7 +25,7 @@ $changes = $post->changes;
 ```
 
 > [!TIP]
-> Read more about the [Change](/api-documentsion/models) model.
+> Read more about the [Change](/api-documentation/models) model.
 
 > [!TIP]
 > Read more about [Accessing Changes](/usage/accessing-changes).

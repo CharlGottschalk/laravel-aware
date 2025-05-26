@@ -8,9 +8,9 @@ Depending on your setup, tracking can be done automatically (default behaviour) 
 or you can disable automatic tracking and, by the use of a trait, track specific models via their observers.
 
 Each time a model changes, a tracker is created and a job is dispatched to process the changes.
-The job will then create a record of the changes in the database, which can be [accessed](/usage/models) later.
+The job will then create a record of the changes in the database, which can be [accessed](/usage/accessing-changes) later.
 
-By default, these jobs run synchronously, but you can also run them asynchronously by using a [queue connection](/setup/config) which is recommended especially in production.
+By default, these jobs run synchronously, but you can also run them asynchronously by using a [queue connection](/setup/configuration) which is recommended especially in production.
 
 The following events are tracked:
 - `created`
