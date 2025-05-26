@@ -34,7 +34,7 @@ class LaravelAwareServiceProvider extends PackageServiceProvider
 
     public function bootingPackage()
     {
-        if (Tracking::shouldTrackGlobal()) {
+        if (Tracking::shouldTrackAuto()) {
             EloquentEvents::make()->listen();
         }
     }

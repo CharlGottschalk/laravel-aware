@@ -61,8 +61,8 @@ $user = Who::performed(Post::class, $post->id, ChangeAction::UPDATE);
 #### `created()`
 
 **Arguments:**
-- _`string`_ **`$referenceClass`**
-- _`string|int`_ **`$referenceId`**
+- _`string|Illuminate\Database\Eloquent\Model`_ **`$reference`**
+- _`string|int|null`_ **`$referenceId`**
 
 **Returns:** _`null|Illuminate\Database\Eloquent\Model`_
 
@@ -70,6 +70,8 @@ $user = Who::performed(Post::class, $post->id, ChangeAction::UPDATE);
 ```php
 $post = Post::find(1);
 $user = Who::created(Post::class, $post->id);
+// --or--
+$users = Who::created($post);
 ```
 
 ---
@@ -77,8 +79,8 @@ $user = Who::created(Post::class, $post->id);
 #### `updated()`
 
 **Arguments:**
-- _`string`_ **`$referenceClass`**
-- _`string|int`_ **`$referenceId`**
+- _`string|Illuminate\Database\Eloquent\Model`_ **`$reference`**
+- _`string|int|null`_ **`$referenceId`**
 
 **Returns:** _`null|Illuminate\Support\Collection`_
 
@@ -86,6 +88,26 @@ $user = Who::created(Post::class, $post->id);
 ```php
 $post = Post::find(1);
 $users = Who::updated(Post::class, $post->id);
+// --or--
+$users = Who::updated($post);
+```
+
+---
+
+#### `restored()`
+
+**Arguments:**
+- _`string|Illuminate\Database\Eloquent\Model`_ **`$reference`**
+- _`string|int|null`_ **`$referenceId`**
+
+**Returns:** _`null|Illuminate\Support\Collection`_
+
+**Example:**
+```php
+$post = Post::find(1);
+$users = Who::restored(Post::class, $post->id);
+// --or--
+$users = Who::restored($post);
 ```
 
 ---
@@ -100,7 +122,6 @@ $users = Who::updated(Post::class, $post->id);
 
 **Example:**
 ```php
-$post = Post::find(1);
 $users = Who::deleted(Post::class, $post->id);
 ```
 
@@ -116,23 +137,6 @@ $users = Who::deleted(Post::class, $post->id);
 
 **Example:**
 ```php
-$post = Post::find(1);
-$users = Who::forceDeleted(Post::class, $post->id);
-```
-
----
-
-#### `restored()`
-
-**Arguments:**
-- _`string`_ **`$referenceClass`**
-- _`string|int`_ **`$referenceId`**
-
-**Returns:** _`null|Illuminate\Support\Collection`_
-
-**Example:**
-```php
-$post = Post::find(1);
-$users = Who::restored(Post::class, $post->id);
+$users = Who::forceDeleted(Post::class, $postId);
 ```
 :::

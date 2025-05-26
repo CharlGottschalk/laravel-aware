@@ -6,12 +6,14 @@ use CharlGottschalk\LaravelAware\Entities\ChangeData;
 use CharlGottschalk\LaravelAware\Helpers\Actor;
 use CharlGottschalk\LaravelAware\Helpers\Ignore;
 use CharlGottschalk\LaravelAware\Helpers\Queue;
+use CharlGottschalk\LaravelAware\Helpers\Tracking;
 use CharlGottschalk\LaravelAware\Processors\Changes;
+use CharlGottschalk\LaravelAware\Tracker;
 use Exception;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
 
-class ProcessGlobalChanges implements ShouldQueue
+class ProcessAutoChanges implements ShouldQueue
 {
     use Queueable;
 
@@ -34,7 +36,7 @@ class ProcessGlobalChanges implements ShouldQueue
     public function handle(): void
     {
         foreach ($this->data as $data) {
-            if (! Ignore::model($data->model, $data->action)) {
+            if (! Ignore::model($data->model, $data->action) && Tracking::shouldTrackAuthenticated()) {
                 Changes::by(Actor::fetch($data->model))
                     ->trackChanges(
                         $data->model,

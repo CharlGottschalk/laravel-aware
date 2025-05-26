@@ -23,7 +23,7 @@ class Actor
             return $model::getActor();
         }
 
-        if (config('aware.authenticated') && Auth::check()) {
+        if (Auth::check()) {
             return self::authActor();
         }
 

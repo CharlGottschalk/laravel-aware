@@ -13,85 +13,109 @@ use Illuminate\Support\Collection;
 class Who
 {
     public static function performed(
-        string $referenceType,
+        string $referenceClass,
         string|int $referenceId,
         ChangeAction $action = ChangeAction::CREATE,
     ): Model|Collection|null {
         return self::getActorResult(
-            referenceType: $referenceType,
-            referenceId: $referenceId,
-            action: $action,
+            referenceClass: $referenceClass,
+            referenceId   : $referenceId,
+            action        : $action,
         );
     }
 
     public static function created(
-        string $referenceType,
-        string|int $referenceId
+        string|Model $reference,
+        string|int|null $referenceId = null
     ): Model|Collection|null {
-        return self::performed(
-            referenceType: $referenceType,
+        return self::getActor(
+            reference: $reference,
             referenceId: $referenceId
         );
     }
 
     public static function deleted(
-        string $referenceType,
-        string|int $referenceId
-    ): Model|Collection|null {
+        string $referenceClass,
+        string|int $referenceId = null
+    ): Collection|null {
         return self::performed(
-            referenceType: $referenceType,
+            referenceClass  : $referenceClass,
             referenceId: $referenceId,
-            action: ChangeAction::DELETE
+            action     : ChangeAction::DELETE
         );
     }
 
     public static function forceDeleted(
-        string $referenceType,
+        string $referenceClass,
         string|int $referenceId
-    ): Model|Collection|null {
+    ): Collection|null {
         return self::performed(
-            referenceType: $referenceType,
+            referenceClass  : $referenceClass,
             referenceId: $referenceId,
-            action: ChangeAction::FORCE_DELETE
+            action     : ChangeAction::FORCE_DELETE
         );
     }
 
     public static function restored(
-        string $referenceType,
-        string|int $referenceId
-    ): Model|Collection|null {
-        return self::performed(
-            referenceType: $referenceType,
+        string|Model $reference,
+        string|int|null $referenceId = null
+    ): Collection|null {
+        return self::getActor(
+            reference  : $reference,
             referenceId: $referenceId,
-            action: ChangeAction::RESTORE
+            action     : ChangeAction::RESTORE
         );
     }
 
     public static function updated(
-        string $referenceType,
-        string|int $referenceId
-    ): Model|Collection|null {
-        return self::performed(
-            referenceType: $referenceType,
+        string|Model $reference,
+        string|int|null $referenceId = null
+    ): Collection|null {
+        return self::getActor(
+            reference  : $reference,
             referenceId: $referenceId,
-            action: ChangeAction::UPDATE
+            action     : ChangeAction::UPDATE
+        );
+    }
+
+    private static function getActor(
+        string|Model $reference,
+        string|int|null $referenceId = null,
+        ChangeAction $action = ChangeAction::CREATE,
+    ) {
+        if ($reference instanceof Model) {
+            return static::performed(
+                referenceClass: get_class($reference),
+                referenceId   : $reference->id,
+                action        : $action
+            );
+        }
+
+        return static::performed(
+            referenceClass: $reference,
+            referenceId   : $referenceId,
+            action        : $action
         );
     }
 
     private static function getActorResult(
-        string $referenceType,
+        string $referenceClass,
         string|int $referenceId,
         ChangeAction $action,
 
     ): null|Collection|Model {
         $changes = self::getQuery(
-            $referenceType,
-            $referenceId,
-            $action
+            referenceClass: $referenceClass,
+            referenceId: $referenceId,
+            action: $action
         );
 
         if ($changes->isEmpty()) {
             return null;
+        }
+
+        if ($action == ChangeAction::CREATE) {
+            return $changes->first()->actor;
         }
 
         if ($changes instanceof EloquentCollection) {
@@ -102,13 +126,13 @@ class Who
     }
 
     private static function getQuery(
-        string $referenceType,
+        string $referenceClass,
         string|int $referenceId,
         ChangeAction $action
-    ): EloquentCollection {
-        $changes = Change::where(
+    ): Model|EloquentCollection {
+        return Change::where(
             'reference_type',
-            $referenceType
+            $referenceClass
         )
             ->where(
                 'reference_id',
@@ -117,12 +141,7 @@ class Who
             ->where(
                 'action',
                 $action
-            );
-
-        if ($action == ChangeAction::CREATE) {
-            return $changes->first();
-        }
-
-        return $changes->get();
+            )
+            ->get();
     }
 }

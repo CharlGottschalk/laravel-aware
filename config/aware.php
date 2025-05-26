@@ -14,7 +14,7 @@ return [
     /**
      * Track only during authenticated sessions.
      */
-    'authenticated' => env('AWARE_AUTH', true),
+    'auth' => env('AWARE_AUTH', true),
 
     /**
      * Opt-out these models from tracking changes.

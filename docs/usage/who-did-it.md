@@ -46,8 +46,8 @@ $actor = Who::performed(Post::class, $postId, ChangeAction::UPDATE);
 ### Who created
 
 Arguments:
-- _`string`_ `$referenceClass`: The class name of the model.
-- _`string|int`_ `$referenceId`: The ID of the model.
+- _`string|Illuminate\Database\Eloquent\Model`_ `$reference`: The model or class name of the model.
+- _`string|int|null`_ `$referenceId`: The ID of the model.
 
 Returns: _`Model|null`_
 
@@ -55,14 +55,18 @@ Returns: _`Model|null`_
 use App\Models\Post;
 use CharlGottschalk\LaravelAware\Who;
 
-$actor = Who::created(Post::class, $postId);
+$post = Post::find(1);
+
+$actor = Who::created(Post::class, $post->id);
+// --or--
+$users = Who::created($post);
 ```
 
 ### Who updated
 
 Arguments:
-- _`string`_ `$referenceClass`: The class name of the model.
-- _`string|int`_ `$referenceId`: The ID of the model.
+- _`string|Illuminate\Database\Eloquent\Model`_ `$reference`: The model or class name of the model.
+- _`string|int|null`_ `$referenceId`: The ID of the model.
 
 Returns: _`Collection|null`_
 
@@ -70,13 +74,36 @@ Returns: _`Collection|null`_
 use App\Models\Post;
 use CharlGottschalk\LaravelAware\Who;
 
-$actors = Who::updated(Post::class, $postId);
+$post = Post::find(1);
+
+$actors = Who::updated(Post::class, $post->id);
+// --or--
+$users = Who::updated($post);
+```
+
+### Who restored
+
+Arguments:
+- _`string|Illuminate\Database\Eloquent\Model`_ `$reference`: The model or class name of the model.
+- _`string|int|null`_ `$referenceId`: The ID of the model.
+
+Returns: _`Collection|null`_
+
+```php
+use App\Models\Post;
+use CharlGottschalk\LaravelAware\Who;
+
+$post = Post::find(1);
+
+$actors = Who::restored(Post::class, $post->id);
+// --or--
+$users = Who::restored($post);
 ```
 
 ### Who deleted
 
 Arguments:
-- _`string`_ `$referenceClass`: The class name of the model.
+- _`string`_ `$referenceClass`: The model or class name of the model.
 - _`string|int`_ `$referenceId`: The ID of the model.
 
 Returns: _`Collection|null`_
@@ -86,21 +113,6 @@ use App\Models\Post;
 use CharlGottschalk\LaravelAware\Who;
 
 $actors = Who::deleted(Post::class, $postId);
-```
-
-### Who restored
-
-Arguments:
-- _`string`_ `$referenceClass`: The class name of the model.
-- _`string|int`_ `$referenceId`: The ID of the model.
-
-Returns: _`Collection|null`_
-
-```php
-use App\Models\Post;
-use CharlGottschalk\LaravelAware\Who;
-
-$actors = Who::restored(Post::class, $postId);
 ```
 
 ### Who force deleted

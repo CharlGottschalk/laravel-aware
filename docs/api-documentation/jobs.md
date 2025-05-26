@@ -8,7 +8,7 @@ outline: 'deep'
 use CharlGottschalk\LaravelAware\Jobs
 ```
 
-### ProcessGlobalChanges
+### ProcessAutoChanges
 
 ::: details Properties
 

@@ -6,7 +6,7 @@ namespace CharlGottschalk\LaravelAware\Processors;
 
 use CharlGottschalk\LaravelAware\Entities\ChangeData;
 use CharlGottschalk\LaravelAware\Enums\ChangeAction;
-use CharlGottschalk\LaravelAware\Jobs\ProcessGlobalChanges;
+use CharlGottschalk\LaravelAware\Jobs\ProcessAutoChanges;
 use CharlGottschalk\LaravelAware\Tracker;
 use Illuminate\Support\Facades\Event;
 
@@ -37,7 +37,7 @@ class EloquentEvents
         Event::listen(
             ['eloquent.created: *'],
             function () {
-                ProcessGlobalChanges::dispatch($this->trackers);
+                ProcessAutoChanges::dispatch($this->trackers);
             }
         );
 
@@ -54,7 +54,7 @@ class EloquentEvents
         Event::listen(
             ['eloquent.deleted: *'],
             function () {
-                ProcessGlobalChanges::dispatch($this->trackers);
+                ProcessAutoChanges::dispatch($this->trackers);
             }
         );
 
@@ -71,7 +71,7 @@ class EloquentEvents
         Event::listen(
             ['eloquent.forceDeleted: *'],
             function () {
-                ProcessGlobalChanges::dispatch($this->trackers);
+                ProcessAutoChanges::dispatch($this->trackers);
             }
         );
 
@@ -88,7 +88,7 @@ class EloquentEvents
         Event::listen(
             ['eloquent.updated: *'],
             function () {
-                ProcessGlobalChanges::dispatch($this->trackers);
+                ProcessAutoChanges::dispatch($this->trackers);
             }
         );
 
@@ -105,7 +105,7 @@ class EloquentEvents
         Event::listen(
             ['eloquent.restored: *'],
             function () {
-                ProcessGlobalChanges::dispatch($this->trackers);
+                ProcessAutoChanges::dispatch($this->trackers);
             }
         );
     }
