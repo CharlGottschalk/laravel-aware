@@ -8,7 +8,7 @@
 ## Introduction
 
 Aware is a simple tool that tracks changes to Eloquent models and provides a way to access the changes made to them.
-<br/><br/>
+
 It uses Laravel's built-in event system to listen for model events and records the changes made to the model's attributes by creating trackers that are dispatched with jobs.
 
 ## Installation
@@ -36,7 +36,7 @@ You're ready to go and tracking will happen automatically.
 
 ## Documentation
 
-For more in-depth information and setup, please read the [documentation](https://laravel-aware.vercel.app/).
+For more in-depth information and setup, please read the [documentation](https://charlgottschalk.github.io/laravel-aware/).
 
 ## Credits
 
