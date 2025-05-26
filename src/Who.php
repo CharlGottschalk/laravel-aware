@@ -36,8 +36,8 @@ class Who
 
     public static function deleted(
         string $referenceClass,
-        string|int $referenceId = null
-    ): Collection|null {
+        string|int|null $referenceId = null
+    ): ?Collection {
         return self::performed(
             referenceClass  : $referenceClass,
             referenceId: $referenceId,
@@ -48,7 +48,7 @@ class Who
     public static function forceDeleted(
         string $referenceClass,
         string|int $referenceId
-    ): Collection|null {
+    ): ?Collection {
         return self::performed(
             referenceClass  : $referenceClass,
             referenceId: $referenceId,
@@ -59,7 +59,7 @@ class Who
     public static function restored(
         string|Model $reference,
         string|int|null $referenceId = null
-    ): Collection|null {
+    ): ?Collection {
         return self::getActor(
             reference  : $reference,
             referenceId: $referenceId,
@@ -70,7 +70,7 @@ class Who
     public static function updated(
         string|Model $reference,
         string|int|null $referenceId = null
-    ): Collection|null {
+    ): ?Collection {
         return self::getActor(
             reference  : $reference,
             referenceId: $referenceId,

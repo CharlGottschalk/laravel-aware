@@ -31,6 +31,6 @@ class Tracking
 
     public static function shouldTrackManually(): bool
     {
-        return static::shouldTrack() && !config('aware.auto');
+        return static::shouldTrack() && ! config('aware.auto');
     }
 }

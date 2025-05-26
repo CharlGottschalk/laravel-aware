@@ -8,7 +8,6 @@ use CharlGottschalk\LaravelAware\Helpers\Ignore;
 use CharlGottschalk\LaravelAware\Helpers\Queue;
 use CharlGottschalk\LaravelAware\Helpers\Tracking;
 use CharlGottschalk\LaravelAware\Processors\Changes;
-use CharlGottschalk\LaravelAware\Tracker;
 use Exception;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
