@@ -128,5 +128,5 @@ By default, jobs run synchronously (`sync`), but you can set this to any queue c
 
 Here you can specify the queue to use for the processing of changes.
 
-`.env`: `AWARE_QUEUE_CONNECTION=sync`
+`.env`: `AWARE_QUEUE=default`
 
