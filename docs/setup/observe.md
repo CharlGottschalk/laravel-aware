@@ -9,12 +9,36 @@ This means that any model you create, update, or delete etc. will be tracked aut
 
 If you want to disable automatic tracking, you can do so by setting the `auto` option to `false` in the `config/aware.php` file.
 
-You can then create an observer for the models you would like to track and add the `ObserverTracksChanges` trait to it.
+### Via Track method
+
+Use the `Tracker::track()` method anytime you want to track changes manually even if tracking is disabled (`track` option set to `false` in the `config/aware.php`).
+
+```php{7,15}
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Controllers\Controller;
+use App\Models\User;
+use CharlGottschalk\LaravelAware\Tracker;
+use Illuminate\Http\Request;
+
+class UserController extends Controller
+{
+    public function store(Request $request): Response
+    {
+        $user = User::create($request->all());
+        Tracker::track($user, ChangeAction::CREATE);
+    }
+}
+```
+
+### Via ObserverTracksChanges trait
+
+You can also create an observer for the models you would like to track and add the `ObserverTracksChanges` trait to it.
 
 > [!TIP]
 > Read more at [Laravel Observers](https://laravel.com/docs/eloquent#observers).
-
-### Via ObserverTracksChanges trait
 
 Use the `ObserverTracksChanges` trait in any model observer.
 
