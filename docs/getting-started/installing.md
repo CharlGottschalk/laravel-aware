@@ -12,7 +12,7 @@ head:
 ### Require package
 
 ```bash
-composer require one-one-8/laravel-aware
+composer require charlgottschalk/laravel-aware
 ```
 
 ### Install Aware
