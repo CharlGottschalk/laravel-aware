@@ -88,7 +88,7 @@ Typically, when creating [observers](https://laravel.com/docs/eloquent#observers
 
 Since the `ObserverTracksChanges` trait overrides these methods you'll have collisions with the default Laravel methods.
 
-### Fresh observer
+##### Fresh observer
 
 On a fresh observer, you can simply use the trait and remove the default methods if you require no implementation.
 
@@ -106,7 +106,7 @@ class UserObserver
     ...
 ```
 
-### Existing observer
+##### Existing observer
 
 If you already have some implementation in any of the methods, you simply need to rename them to `isCreated`, `isUpdated`, `isDeleted` etc.
 The trait will automatically call those methods when the corresponding event is fired.
