@@ -33,6 +33,32 @@ class UserController extends Controller
 }
 ```
 
+If you would like to be bound by the config and only track if `track` option set to `true` in the `config/aware.php`, you can use the `Tracking::shouldTrackManually()` method to check if tracking is enabled.
+
+```php{7,8,17,18,19}
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Controllers\Controller;
+use App\Models\User;
+use CharlGottschalk\LaravelAware\Tracker;
+use CharlGottschalk\LaravelAware\Helpers\Tracking;
+use Illuminate\Http\Request;
+
+class UserController extends Controller
+{
+    public function store(Request $request): Response
+    {
+        $user = User::create($request->all());
+        
+        if (Tracking::shouldTrackManually()) {
+            Tracker::track($user, ChangeAction::CREATE);
+        }
+    }
+}
+```
+
 ### Via ObserverTracksChanges trait
 
 You can also create an observer for the models you would like to track and add the `ObserverTracksChanges` trait to it.
@@ -56,7 +82,7 @@ class UserObserver
     ...
 ```
 
-## Implementation
+#### Implementation
 
 Typically, when creating [observers](https://laravel.com/docs/eloquent#observers) in Laravel you'll have a scaffolded file containing `created`, `updated`, `deleted`, etc. methods.
 
